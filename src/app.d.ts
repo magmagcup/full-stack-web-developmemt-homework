@@ -11,3 +11,9 @@ declare namespace App {
 
 	interface Stuff {}
 }
+
+type Todo = {
+	create_at: Date;
+	text: string;
+	done: boolean;
+}
