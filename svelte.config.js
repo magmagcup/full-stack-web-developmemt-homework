@@ -10,6 +10,10 @@ const config = {
 	kit: {
 		adapter: adapter(),
 
+		methodOverride: {
+			allowed: ['DELETE']
+		},
+
 		vite: {
 			server: {
 				hmr: {
