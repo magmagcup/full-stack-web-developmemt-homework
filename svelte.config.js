@@ -11,7 +11,8 @@ const config = {
 		adapter: adapter(),
 
 		methodOverride: {
-			allowed: ['DELETE']
+			parameter: "_method",
+			allowed: ['PUT', 'PATCH', 'DELETE']
 		},
 
 		vite: {
