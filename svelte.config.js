@@ -10,6 +10,11 @@ const config = {
 	kit: {
 		adapter: adapter(),
 
+		methodOverride: {
+			parameter: "_method",
+			allowed: ['PUT', 'PATCH', 'DELETE']
+		},
+
 		vite: {
 			server: {
 				hmr: {
