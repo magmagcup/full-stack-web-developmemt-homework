@@ -40,15 +40,26 @@ export const api = async (request: RequestEvent, data?: Record<string, unknown>)
             break;
         
         case "PATCH":
-            body = await prisma.todo.update({
-                where: {
-                    uid: request.params.uid
-                },
-                data: {
-                    done: data.done,
-                    text: data.text
-                }
-            })
+            if (data.text == null) {
+                body = await prisma.todo.update({
+                    where: {
+                        uid: request.params.uid
+                    },
+                    data: {
+                        done: data.done,
+                    }
+                })     
+            } else {
+                body = await prisma.todo.update({
+                    where: {
+                        uid: request.params.uid
+                    },
+                    data: {
+                        done: data.done,
+                    }
+                })
+            }
+
             // todos = todos.map(todo => {
             //     if (todo.uid === request.params.uid) {
             //         if (data.text) todo.text = data.text as string;
